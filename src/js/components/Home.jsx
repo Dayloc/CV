@@ -1,192 +1,282 @@
 import React from "react";
 import "../../styles/home.css";
-import { FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import cvimg from "../../img/imgcv.png"; // Importa la imagen del CV
 
 const Home = () => {
   return (
-    <div className="cv-container">
-      {/* Efecto de partículas (opcional) */}
-      <div className="particles-background"></div>
-      
-      <div className="header">
-        <h1>DAYLOC YUMAR PRIETO RODRIGUEZ</h1>
-        <div className="title neon-text">Full Stack Developer</div>
-        <div className="contact-info">
-          <div className="contact-item glow-on-hover">
-            <span className="contact-icon"><FaPhone className="icon"/></span>
-            <span>+34662424881</span>
-          </div>
-          <div className="contact-item glow-on-hover">
-            <span className="contact-icon"><FaEnvelope className="icon"/></span>
-            <span>daylocyumar@gmail.com</span>
-          </div>
-          <div className="contact-item glow-on-hover">
-            <span className="contact-icon"><FaLinkedin className="icon"/></span>
-            <a
-              href="https://www.linkedin.com/in/dayloc-prieto-1aa020288/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="neon-link"
+    <div className="cv-wrapper text-center">
+      <div className="cv-container  m-5 text-center">
+        {/* Efecto de partículas (opcional) */}
+        <div className="particles-background"></div>
+
+        {/* Header */}
+        <header className="header text-center py-4">
+          <div className="header-content">
+            {/* Imagen del perfil */}
+            <div className="profile-image-container mb-3">
+              <img
+                src={cvimg}
+                alt="Dayloc Prieto CV"
+                className="cv-image img-fluid rounded-circle border border-warning"
+                style={{ width: "150px", height: "150px", objectFit: "cover" }}
+              />
+            </div>
+
+            {/* Nombre */}
+            <h1
+              className="text-uppercase mb-2"
+              style={{ letterSpacing: "2px" }}
             >
-              LinkedIn
-            </a>
-          </div>
-          <div className="contact-item glow-on-hover">
-            <span className="contact-icon"><FaMapMarkerAlt className="icon"/></span>
-            <span>Rio San Pedro, Puerto Real, Cadiz, España</span>
-          </div>
-        </div>
-      </div>
+              DAYLOC YUMAR PRIETO RODRIGUEZ
+            </h1>
 
-      <div className="section">
-        <h2 className="section-title"><span className="neon-underline">SUMMARY</span></h2>
-        <p className="summary-text glow-text">
-          A modo de resumen, me gustaría agregar, que aunque el desarrollo de mi
-          vida laboral no ha sido precisamente entorno a esta rama, creo que
-          seré capaz de cumplir las expectativas que requiera el puesto. Me
-          caracterizo por ser perseverante y por utilizar todas las herramientas
-          posibles para poder estar a la altura del empleo que desarrolle. Creo
-          que las mayores barreras nos las ponemos nosotros mismos, por lo que
-          si nos mentalizamos en que nada es imposible, el cielo es el límite.
-        </p>
-      </div>
+            {/* Título */}
+            <div className="title neon-text mb-4">
+              <h3 className="m-0" style={{ fontWeight: "700" }}>
+                Full Stack Developer
+              </h3>
+            </div>
 
-      <div className="section current-role">
-        <h2 className="section-title"><span className="neon-underline">CURRENT ROLE</span></h2>
-        <div className="role-content">
-          <div className="holographic-card">
-            <h3 className="role-title">Mentor at 4geekAcademy</h3>
+            {/* Información de contacto */}
+            <div className="contact-info d-flex flex-wrap justify-content-center gap-3 mb-3">
+              {/* Teléfono */}
+              <div className="contact-item glow-on-hover p-2 d-flex align-items-center">
+                <FaPhone className="icon text-warning me-2" />
+                <span className="text-warning">+34 662 424 881</span>
+              </div>
+
+              {/* Email */}
+              <div className="contact-item glow-on-hover p-2 d-flex align-items-center">
+                <FaEnvelope className="icon text-warning me-2" />
+                <span className="text-warning">daylocyumar@gmail.com</span>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="contact-item glow-on-hover p-2 d-flex align-items-center">
+                <FaLinkedin className="icon text-warning me-2" />
+                <a
+                  href="https://www.linkedin.com/in/dayloc-prieto-1aa020288/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neon-link text-warning text-decoration-none"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              {/* Ubicación */}
+              <div className="contact-item glow-on-hover p-2 d-flex align-items-center">
+                <FaMapMarkerAlt className="icon text-warning me-2" />
+                <span className="text-warning">
+                  Río San Pedro, Puerto Real, Cádiz, España
+                </span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Summary */}
+        <section className="section">
+          <h2 className="section-title neon-underline text-warning">SUMMARY</h2>
+          <p className="summary-text glow-text mt-3">
+            Aunque mi experiencia laboral previa no ha estado directamente
+            relacionada con la tecnología, tengo la firme convicción de que
+            puedo cumplir con las expectativas del puesto. Soy perseverante y
+            siempre busco todas las herramientas posibles para estar a la altura
+            de cualquier desafío. Creo que las mayores barreras son mentales: si
+            creemos en nosotros mismos, no hay límites.
+          </p>
+        </section>
+
+        {/* Current Role */}
+        <section className="section current-role">
+          <h2 className="section-title neon-underline text-warning">
+            CURRENT ROLE
+          </h2>
+          <div className="holographic-card m-4">
+            <h3 className="role-title text-warning">
+              Mentor at 4Geeks Academy
+            </h3>
             <p className="glow-text">
-              Actualmente colaboro con la academia 4geekAcademy ejerciendo como
-              mentor donde mi actividad principal es ayudar a alumnos en curso
-              actual a la resolucion de proyectos de dicho curso. Especificamente
-              en React, JWT, servicios de API, React-Redux, JavaScript, PYTHON,
-              SQLAlchemy y cualquier duda que pueda surgir.
+              Actualmente colaboro con 4Geeks Academy como mentor, ayudando a
+              los estudiantes a resolver proyectos relacionados con React,
+              JavaScript, Python, SQLAlchemy, JWT, servicios API, y React-Redux,
+              así como otras dudas técnicas del curso.
+            </p>
+            <h3 className="role-title text-warning">
+              Teacher Asistent at 4Geeks Academy
+            </h3>
+            <p className="glow-text">
+              También colaboro como asistente de profesor en 4Geeks Academy,
+              apoyando a los estudiantes en su aprendizaje y desarrollo de
+              habilidades técnicas. Mi enfoque es ayudarlos a comprender
+              conceptos complejos y a aplicar sus conocimientos en proyectos
+              prácticos.
             </p>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="two-column-section">
-        <div className="section">
-          <h2 className="section-title"><span className="neon-underline">EDUCATION</span></h2>
-          <div className="education-item timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <h3 className="neon-accent">4Geeks Academy</h3>
-              <div className="date neon-date">01/2024 - 07/2024</div>
-              <p>Full Stack Developer Program</p>
+        {/* Education & Certification */}
+        <section className="two-column-section">
+          {/* Sección Educación */}
+          <div className="section education-section">
+            <h2 className="section-title neon-underline text-warning mb-3 text-center">
+              EDUCATION
+            </h2>
+            <div className="education-item timeline-item centered-timeline">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <h3 className="neon-accent text-center">4Geeks Academy</h3>
+                <div className="date neon-date text-center">
+                  01/2024 - 07/2024
+                </div>
+                <p className="text-center">Full Stack Developer Program</p>
+              </div>
             </div>
-          </div>
-          <div className="education-item timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <h3 className="neon-accent">UCI (Universidad de las Ciencias Informáticas)</h3>
-              <div className="date neon-date">2005 - 2010</div>
-              <p>Computer Science Degree</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="section">
-          <h2 className="section-title"><span className="neon-underline">CERTIFICATION</span></h2>
-          <div className="certification-item holographic-card">
-            <h3 className="neon-accent">Full Stack Developer</h3>
-            <p>4 Geeks Academy</p>
-            <div className="date neon-date">2024</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="section">
-        <h2 className="section-title"><span className="neon-underline">TECHNICAL SKILLS</span></h2>
-        <div className="skills-container">
-          <div className="skills-category">
-            <h4 className="neon-category">Frontend</h4>
-            <div className="skills">
-              <span className="skill pulse">React</span>
-              <span className="skill pulse">Redux</span>
-              <span className="skill pulse">CRUD</span>
-              <span className="skill pulse">JavaScript</span>
-              <span className="skill pulse">TypeScript</span>
-              <span className="skill pulse">HTML5</span>
-              <span className="skill pulse">CSS3</span>
+            <div className="education-item timeline-item centered-timeline">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <h3 className="neon-accent text-center">
+                  Universidad de las Ciencias Informáticas (UCI)
+                </h3>
+                <div className="date neon-date text-center">2005 - 2010</div>
+                <p className="text-center">Computer Science Degree</p>
+              </div>
             </div>
           </div>
 
-          <div className="skills-category">
-            <h4 className="neon-category">Backend</h4>
-            <div className="skills">
-              <span className="skill pulse">Python</span>
-              <span className="skill pulse">Flask</span>
-              <span className="skill pulse">SQLAlchemy</span>
-              <span className="skill pulse">JWT</span>
-              <span className="skill pulse">RESTful APIs</span>
+          {/* Sección Certificación */}
+          <div className="section certification-section">
+            <h2 className="section-title neon-underline text-warning text-center">
+              CERTIFICATION
+            </h2>
+            <div className="certification-item holographic-card mt-4 centered-certification">
+              <h3 className="neon-accent text-center">Full Stack Developer</h3>
+              <p className="text-center">4Geeks Academy</p>
+              <div className="date neon-date text-center">2024</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Skills */}
+        <section className="section m-5 text-center">
+          <h2 className="section-title neon-underline mb-4 text-warning">
+            TECHNICAL SKILLS
+          </h2>
+          <div className="skills-container">
+            <div className="d-flex flex-wrap justify-content-center skills-categories-container">
+              {/* Frontend Skills */}
+              <div className="skills-category">
+                <h4 className="neon-category text-warning">Frontend</h4>
+                <div className="skills">
+                  <span className="skill pulse">React</span>
+                  <span className="skill pulse">Redux</span>
+                  <span className="skill pulse">JavaScript</span>
+                  <span className="skill pulse">TypeScript</span>
+                  <span className="skill pulse">HTML5</span>
+                  <span className="skill pulse">CSS3</span>
+                  <span className="skill pulse">Bootstrap</span>
+                </div>
+              </div>
+
+              {/* Backend Skills */}
+              <div className="skills-category">
+                <h4 className="neon-category text-warning">Backend</h4>
+                <div className="skills">
+                  <span className="skill pulse">Python</span>
+                  <span className="skill pulse">Flask</span>
+                  <span className="skill pulse">SQLAlchemy</span>
+                  <span className="skill pulse">JWT</span>
+                  <span className="skill pulse">RESTful APIs</span>
+                  <span className="skill pulse">MySQL</span>
+                  <span className="skill pulse">PostgreSQL</span>
+                </div>
+              </div>
+
+              {/* Tools & Others */}
+              <div className="skills-category">
+                <h4 className="neon-category text-warning">Tools & Others</h4>
+                <div className="skills">
+                  <span className="skill pulse">Git</span>
+                  <span className="skill pulse">GitHub</span>
+                  <span className="skill pulse">Insomnia</span>
+                  <span className="skill pulse">Postman</span>
+                  <span className="skill pulse">Agile</span>
+                  <span className="skill pulse">Mentoring</span>
+                  <span className="skill pulse">VS Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Languages & Online Presence */}
+        <section className="two-column-section gap-5  m-5 ">
+          <div className="section">
+            <h2 className="section-title neon-underline">LANGUAGES</h2>
+            <div className="language-item">
+              <span className="language-name">Español</span>
+              <div className="language-level-container">
+                <div
+                  className="language-level"
+                  style={{ "--level": "100%" }}
+                ></div>
+                <span>Native</span>
+              </div>
+            </div>
+            <div className="language-item">
+              <span className="language-name">Inglés</span>
+              <div className="language-level-container">
+                <div
+                  className="language-level"
+                  style={{ "--level": "80%" }}
+                ></div>
+                <span>Advanced</span>
+              </div>
+            </div>
+            <div className="language-item">
+              <span className="language-name">Francés</span>
+              <div className="language-level-container">
+                <div
+                  className="language-level"
+                  style={{ "--level": "20%" }}
+                ></div>
+                <span>Beginner</span>
+              </div>
             </div>
           </div>
 
-          <div className="skills-category">
-            <h4 className="neon-category">Tools & Others</h4>
-            <div className="skills">
-              <span className="skill pulse">Git</span>
-              <span className="skill pulse">Insomnia</span>
-              <span className="skill pulse">Postman</span>
-              <span className="skill pulse">Agile Methodologies</span>
-              <span className="skill pulse">Mentoring</span>
+          <div className="section">
+            <h2 className="section-title neon-underline">ONLINE PRESENCE</h2>
+            <div className="online-presence">
+              <a
+                href="https://www.linkedin.com/in/dayloc-prieto-1aa020288/"
+                className="social-link neon-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="icon" />
+                LinkedIn Profile
+              </a>
+              <a
+                href="https://github.com/Dayloc"
+                className="social-link neon-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="icon" />
+                GitHub Profile
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="two-column-section">
-        <div className="section">
-          <h2 className="section-title"><span className="neon-underline">LANGUAGES</span></h2>
-          <div className="language-item">
-            <span className="language-name">Español</span>
-            <div className="language-level-container">
-              <div className="language-level" style={{"--level": "100%"}}></div>
-              <span>Native</span>
-            </div>
-          </div>
-          <div className="language-item">
-            <span className="language-name">Inglés</span>
-            <div className="language-level-container">
-              <div className="language-level" style={{"--level": "80%"}}></div>
-              <span>Advanced</span>
-            </div>
-          </div>
-          <div className="language-item">
-            <span className="language-name">Francés</span>
-            <div className="language-level-container">
-              <div className="language-level" style={{"--level": "20%"}}></div>
-              <span>Beginner</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="section">
-          <h2 className="section-title"><span className="neon-underline">ONLINE PRESENCE</span></h2>
-          <div className="online-presence">
-            <a
-              href="https://www.linkedin.com/in/dayloc-prieto-1aa020288/"
-              className="social-link neon-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="social-icon"><FaLinkedin className="icon"/></span>
-              LinkedIn Profile
-            </a>
-            <a
-              href="https://github.com/Dayloc"
-              className="social-link neon-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="social-icon"><FaGithub className="icon"/></span>
-              GitHub Profile
-            </a>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );
